@@ -1,37 +1,45 @@
 package com.vivek.crudoperations.service;
 
 import com.vivek.crudoperations.entity.User;
+import com.vivek.crudoperations.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
+import java.util.Optional;
 
 
 @Service
 @AllArgsConstructor
 public class UserServiceImplementation implements UserService {
+
+    private final UserRepository userRepository;
+
     @Override
     public User insertUser(User user) {
-        return null;
+        return userRepository.save(user);
     }
 
     @Override
-    public User findByEmail(String email) {
-        return null;
+    public User findById(Long userId) {
+        Optional<User> optionalUser = userRepository.findById(userId);
+        return  optionalUser.get();
     }
 
     @Override
     public List<User> getAllUsers() {
-        return List.of();
+        return userRepository.findAll();
     }
 
     @Override
     public User updateUser(User user) {
-        return null;
+        User oldUser = userRepository.findById(user.getId()).get();
+        oldUser.setEmail(user.getEmail());
+        return userRepository.save(oldUser);
     }
 
     @Override
-    public User deleteUser(Long id) {
-        return null;
+    public void deleteUser(Long id) {
+         userRepository.deleteById(id);
     }
 }
