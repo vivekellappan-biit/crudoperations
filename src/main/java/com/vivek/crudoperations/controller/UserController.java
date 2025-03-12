@@ -1,6 +1,6 @@
 package com.vivek.crudoperations.controller;
 
-import com.vivek.crudoperations.entity.User;
+import com.vivek.crudoperations.model.User;
 import com.vivek.crudoperations.service.UserService;
 import lombok.AllArgsConstructor;
 import org.springframework.http.HttpStatus;

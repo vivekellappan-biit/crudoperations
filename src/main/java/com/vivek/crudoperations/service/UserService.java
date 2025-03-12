@@ -1,6 +1,6 @@
 package com.vivek.crudoperations.service;
 
-import com.vivek.crudoperations.entity.User;
+import com.vivek.crudoperations.model.User;
 
 import java.util.List;
 

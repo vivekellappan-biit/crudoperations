@@ -1,6 +1,6 @@
 package com.vivek.crudoperations.service;
 
-import com.vivek.crudoperations.entity.User;
+import com.vivek.crudoperations.model.User;
 import com.vivek.crudoperations.repository.UserRepository;
 import lombok.AllArgsConstructor;
 import org.springframework.stereotype.Service;
